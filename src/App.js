@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 
-// http://openlibrary.org/search/authors.json?q=twain
-// http://openlibrary.org/search.json?author=tolkien
-// https://openlibrary.org/search.json?q=piggy+elephant
-// https://openlibrary.org/search.json?q=on+writing+well&fields=*,availability&limit=1
-
+// https://openlibrary.org/search.json?q=on+writing+well&fields=*,availability&limit=10
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
@@ -35,7 +31,7 @@ function App() {
         </div>
         <h2>You searched for {searchValue}</h2>
         {data &&
-          <ol>
+         <ol>
             {list}
           </ol>
         }
