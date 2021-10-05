@@ -1,15 +1,24 @@
-import React from "react";
-import './App.css';
-import AddBooks from "./pages/AddBooks";
-// import Routes from '.components/Routes'
+import React from "react"
+import './App.css'
+import Nav from './components/Nav'
+
+import { BrowserRouter as Router } from "react-router-dom"
+import Routes from './components/Routes'
 
 function App() {
   return (
-    <div>
-      <main>
-        <AddBooks />
-      </main>
-    </div>
+    <Router>
+      <div>
+        <header>
+          <Nav />
+        </header>
+        <main>
+          <Routes />
+        </main>
+        
+       </div>
+    </Router>
+    
   )    
 }
 
