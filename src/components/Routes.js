@@ -1,5 +1,4 @@
 import React from 'react'
-// React Router
 import { Route, Switch } from 'react-router-dom'
 
 import AddBooks from '../pages/AddBooks'
