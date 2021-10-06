@@ -14,7 +14,7 @@ function AddBooks() {
 
     useEffect(() => {
         async function fetchAPI(){
-          const result = await axios(`https://openlibrary.org/search.json?title=${query}`)
+          const result = await axios(`https://openlibrary.org/search.json?title=${query}&fields=*,availability&limit=5`)
           console.log(result.data.docs[0])
           setBooks(result.data.docs)
           setIsLoading(false)
