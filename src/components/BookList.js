@@ -5,7 +5,7 @@ function BookList({ isLoading, books }) {
     return isLoading ? (<h1>Loading...</h1>) : (
         <div>
             {books.map(book => (
-                <BookItem key={book.cover_i} book={book}></BookItem>
+                <BookItem key={book._version_} book={book}></BookItem>
             ))}
         </div>
     )

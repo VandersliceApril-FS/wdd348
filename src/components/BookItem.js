@@ -8,9 +8,17 @@ const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
             <img src={coverSrc} alt='book cover' />
             <ul>
                 <li><strong>Title: </strong> {book.title}</li>
-                <li><strong>Subtitle: </strong> {book.subtitle}</li>
-                <li>Author: {book.author_name}</li>
-                <li>key:{book.cover_i}</li>
+                {book.subtitle && 
+                    <li><strong>Subtitle: </strong> {book.subtitle}</li>
+                }
+                {book.author_name &&
+                    <li>Author: {book.author_name[0]}</li>
+                }
+                {book.isbn && 
+                    <li>ISBN:{book.isbn[0]}</li>
+                }
+                <li>Version: {book._version_}</li>
+                
             </ul>
         </div>
     )
