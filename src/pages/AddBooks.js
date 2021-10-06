@@ -1,29 +1,25 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
+import BookList from '../components/BookList'
 
 // https://openlibrary.org/search.json?q=on+writing+well&fields=*,availability&limit=10
 
 function AddBooks() {
     const pageTitle = 'Add Books';
     const [searchValue, setSearchValue] = useState('');
-    const [data, setData] = useState(null);
-    let list = [];
+    const [isLoading, setIsLoading] = useState(true)
+    const [books, setBooks] = useState(null);
 
     useEffect(() => {
         async function fetchAPI(){
-          const response = await fetch(`https://openlibrary.org/search.json?title=${searchValue}&fields=*,availability&limit=10`);
-          const data = await response.json();
-          const booksResults = data.docs;
-    
-          setData(booksResults);
+          const result = await axios(`https://openlibrary.org/search.json?title=${searchValue}&fields=*,availability&limit=10`);
+          console.log(result.data.docs)
+          setBooks(result.data.docs)
+          setIsLoading(false)
         }
         fetchAPI();
     }, );
 
-    if(data) {
-    data.forEach(element => {
-        list.push(<li>{element.title} {element.subtitle}, <em>{element.author_name}</em></li>)
-    });
-    }
     return (
         <div>
             <header>
@@ -34,11 +30,11 @@ function AddBooks() {
             <input value={searchValue} onChange={e => setSearchValue(e.target.value)}></input>
           </div>
           <h2>You searched for {searchValue}</h2>
-          {data &&
-           <ol>
-              {list}
-            </ol>
+          {books &&
+            <BookList isLoading={isLoading} books={books} />
           }
+
+          
           
         </div>
         );
