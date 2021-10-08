@@ -1,5 +1,4 @@
 import React from "react"
-import './App.css'
 import Nav from './components/Nav'
 
 import { BrowserRouter as Router } from "react-router-dom"

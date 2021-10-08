@@ -5,7 +5,7 @@ function Nav() {
     return (
         <nav>
             <NavLink to='/MyLibrary'>MyLibrary</NavLink>
-            <NavLink to='/AddBooks'>Add Books</NavLink>
+            <NavLink to='/SearchBooks'>Search Books</NavLink>
         </nav>
     )
 }

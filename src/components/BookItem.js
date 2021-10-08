@@ -1,11 +1,14 @@
 import React from 'react'
 
 function BookItem({ book }) {
-const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+    const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+  
 
     return (
         <div>
-            <img src={coverSrc} alt='book cover' />
+            {book.cover_i &&
+                <img src={coverSrc} alt='book cover' />
+            }
             <ul>
                 <li><strong>Title: </strong> {book.title}</li>
                 {book.subtitle && 
@@ -17,9 +20,10 @@ const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
                 {book.isbn && 
                     <li>ISBN:{book.isbn[0]}</li>
                 }
+                <li>Publish Year:{book.first_publish_year} </li>
                 <li>Version: {book._version_}</li>
-                
             </ul>
+            <button onClick={(e) => console.log(`you clicked ${book.title}`)}>Add</button>
         </div>
     )
 }

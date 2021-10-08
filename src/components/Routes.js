@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import AddBooks from '../pages/AddBooks'
+import SearchBooks from '../pages/SearchBooks'
 import MyLibrary from '../pages/MyLibrary'
 
 const Routes = () => {
@@ -9,7 +9,7 @@ const Routes = () => {
         <Switch>
             <Route exact path='/' component={MyLibrary} />
             <Route path='/MyLibrary' component={MyLibrary} />
-            <Route path='/AddBooks' component={AddBooks} />
+            <Route path='/SearchBooks' component={SearchBooks} />
         </Switch>
     )
 }
