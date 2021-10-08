@@ -1,9 +1,12 @@
 import React from 'react'
 
-function BookItem({ book }) {
+function BookItem({ key, book, addBook }) {
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
-  
-
+    
+    const onClick = e => {
+        addBook(book)
+    }
+    
     return (
         <div>
             {book.cover_i &&
@@ -23,7 +26,7 @@ function BookItem({ book }) {
                 <li>Publish Year:{book.first_publish_year} </li>
                 <li>Version: {book._version_}</li>
             </ul>
-            <button onClick={(e) => console.log(`you clicked ${book.title}`)}>Add</button>
+            <button onClick={book => onClick(book)}>Add</button>
         </div>
     )
 }

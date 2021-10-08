@@ -5,11 +5,10 @@ import SearchResults from "../components/SearchResults"
 
 // https://openlibrary.org/search.json?q=harry%20potter&fields=author_name,title,cover_i,availability&limit=3
 
-function SearchBooks() {
-    const pageTitle = 'Search Books';
-    const [query, setQuery] = useState('')
+function SearchBooks({ getNewBook }) {
+    const [query, setQuery] = useState('') // gets the search value from user
     const [isLoading, setIsLoading] = useState(true)
-    const [books, setBooks] = useState(null)
+    const [books, setBooks] = useState(null) // search results
 
     useEffect(() => {
         async function fetchAPI(){
@@ -23,14 +22,11 @@ function SearchBooks() {
 
     return (
         <div>
-            <header>
-                <h2>{pageTitle}</h2>
-            </header>
           <div>
             <Search getQuery={q => setQuery(q)} />
           </div>
           {books &&
-            <SearchResults isLoading={isLoading} books={books} />
+            <SearchResults isLoading={isLoading} books={books} getBookToAdd={e => getNewBook(e)} />
           }    
         </div>
         );
