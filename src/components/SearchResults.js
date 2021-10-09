@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import BookItem from './BookItem'
 
-function SearchResults({ isLoading, books, getBookToAdd}) {
-    const [bookToAdd, setBookToAdd] = useState('')
-
-    useEffect(() => {
-        getBookToAdd(bookToAdd)
-
-    }, [bookToAdd])
+function SearchResults({ isLoading, books, setNewBook, savedBooks}) {
 
     return isLoading ? (<h1>Loading...</h1>) : (
         <div>
             {books.map(book => (
-                <BookItem key={book._version_} book={book} addBook={e => setBookToAdd(e)}></BookItem>
+                <BookItem savedBooks={savedBooks} key={book._version_} book={book} setNewBook={setNewBook}></BookItem>
             ))}
         </div>
     )

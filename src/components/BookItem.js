@@ -1,10 +1,10 @@
 import React from 'react'
 
-function BookItem({ key, book, addBook }) {
+function BookItem({ key, book, setNewBook, savedBooks }) {
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     
-    const onClick = e => {
-        addBook(book)
+    const onClick = () => {
+        setNewBook([...savedBooks, book])
     }
     
     return (

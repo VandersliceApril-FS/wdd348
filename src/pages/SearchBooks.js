@@ -5,7 +5,7 @@ import SearchResults from "../components/SearchResults"
 
 // https://openlibrary.org/search.json?q=harry%20potter&fields=author_name,title,cover_i,availability&limit=3
 
-function SearchBooks({ getNewBook }) {
+function SearchBooks({ setNewBook, savedBooks }) {
     const [query, setQuery] = useState('') // gets the search value from user
     const [isLoading, setIsLoading] = useState(true)
     const [books, setBooks] = useState(null) // search results
@@ -16,7 +16,6 @@ function SearchBooks({ getNewBook }) {
           setBooks(result.data.docs)
           setIsLoading(false)
         }
-        
         fetchAPI();
     }, [query]);
 
@@ -26,7 +25,7 @@ function SearchBooks({ getNewBook }) {
             <Search getQuery={q => setQuery(q)} />
           </div>
           {books &&
-            <SearchResults isLoading={isLoading} books={books} getBookToAdd={e => getNewBook(e)} />
+            <SearchResults savedBooks={savedBooks} isLoading={isLoading} books={books} setNewBook={setNewBook} />
           }    
         </div>
         );
