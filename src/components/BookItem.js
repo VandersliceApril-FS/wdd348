@@ -21,7 +21,7 @@ function BookItem({ key, book, setNewBook, savedBooks }) {
                     <li>Author: {book.author_name[0]}</li>
                 }
                 {book.isbn && 
-                    <li>ISBN:{book.isbn[0]}</li>
+                    <li>ISBN: {book.isbn[0]}</li>
                 }
                 <li>Publish Year:{book.first_publish_year} </li>
                 <li>Version: {book._version_}</li>
