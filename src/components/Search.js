@@ -12,7 +12,8 @@ function Search({ getQuery }) {
             <form>
                 <input 
                 type='text'
-                value={text} 
+                value={text}
+                // throttling, debouncing, backing off
                 onChange={e => onChange(e.target.value)}
                 autoFocus
                 />
@@ -22,4 +23,3 @@ function Search({ getQuery }) {
 }
 
 export default Search
-// throttling, debouncing, backing off
