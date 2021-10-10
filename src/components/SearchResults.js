@@ -2,7 +2,6 @@ import React from 'react'
 import BookItem from './Book/BookItem'
 
 function SearchResults({ isLoading, books, setNewBook, savedBooks}) {
-
     return isLoading ? (<h1>Loading...</h1>) : (
         <div>
             {books.map(book => (

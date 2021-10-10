@@ -34,9 +34,10 @@ const styles = {
   }
 }
 
-
-
 function App() {
+  // savedBooks holds the current array of books the user has saved and
+  // sets any books that are added
+  // gets passed all the way down to the bookItem so its state can be updated after a search
   const [savedBooks, setNewBook] = useState([])
   
   return (
@@ -78,7 +79,6 @@ function App() {
         </main>
        </div>
     </Router>
-    
   )    
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import BookItem from '../components/Book/BookItem'
 
+// static book item used to style the cards
 const tempBook = {
     title: 'On Writing Well',
     subtitle: 'an informal guide to writing non-fiction',

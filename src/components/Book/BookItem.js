@@ -30,6 +30,7 @@ const styles = {
 
 }
 
+// savedBooks is passed all the way down from the main page to all book items so that when 'add' is clicked on a book, the current state of savedBooks can be updated
 function BookItem({book, setNewBook, savedBooks }) {
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     

@@ -1,3 +1,5 @@
+/* Using a CSS file here to set font family. Wasn't quite sure how to do it using CSS modules. */
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;400;500;600;700&family=Lora&display=swap');
 
 h2 {

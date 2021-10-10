@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import Search from '../components/Search'
 import SearchResults from "../components/SearchResults"
 
-// https://openlibrary.org/search.json?q=harry%20potter&fields=author_name,title,cover_i,availability&limit=3
+// https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=5
 
 function SearchBooks({ setNewBook, savedBooks }) {
     const [query, setQuery] = useState('') // gets the search value from user
