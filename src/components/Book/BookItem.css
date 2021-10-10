@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;400;500;600;700&family=Lora&display=swap');
+
+h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+}
+
+p {
+    margin: 0;
+}

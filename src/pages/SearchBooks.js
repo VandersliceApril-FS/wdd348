@@ -16,7 +16,10 @@ function SearchBooks({ setNewBook, savedBooks }) {
           setBooks(result.data.docs)
           setIsLoading(false)
         }
-        fetchAPI();
+        if(query !== '') {
+          fetchAPI();
+        }
+        
     }, [query]);
 
     return (

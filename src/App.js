@@ -28,7 +28,7 @@ const styles = {
     alignItems: 'center'
   },
   main: {
-    maxWidth: '900px',
+    width: '95%',
     margin: '3rem auto',
     border: '1px solid red'
   }
@@ -67,11 +67,11 @@ function App() {
         <main style={styles.main}>
           <Switch>
               <Route exact path='/'>
-                <h2>My Library</h2>
+                <h1>My Library</h1>
                 <MyLibrary savedBooks={savedBooks} />
               </Route>
               <Route path='/SearchBooks'>
-                <h2>Search Books</h2>
+                <h1>Search Books</h1>
                 <SearchBooks savedBooks={savedBooks} setNewBook={setNewBook} />
               </Route>
           </Switch>

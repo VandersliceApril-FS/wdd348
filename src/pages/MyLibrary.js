@@ -1,5 +1,5 @@
 import React from 'react'
-import BookItem from '../components/BookItem'
+import BookItem from '../components/Book/BookItem'
 
 const tempBook = {
     title: 'On Writing Well',
@@ -7,7 +7,8 @@ const tempBook = {
     author_name: ['William Zinsser'],
     isbn: ['060914793'],
     first_publish_year: '1976',
-    _version_: '1700712174657208328'
+    _version_: '1700712174657208328',
+    cover_i: '20450'
 }
 
 function MyLibrary ({ savedBooks }) {
