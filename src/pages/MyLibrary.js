@@ -12,14 +12,30 @@ const tempBook = {
     cover_i: '20450'
 }
 
+const styles = {
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        border: '1px solid yellow',
+        justifyContent: 'space-around'
+    }
+}
+
 function MyLibrary ({ savedBooks }) {
     return (savedBooks == null) ? (<p>search for books to add to your library</p>) : (
-        <div>
+        <section style={styles.container}>
         {savedBooks.map(book => (
             <BookItem key={book._version_} book={book} />
         ))}
         <BookItem book={tempBook} />
-        </div>
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        <BookItem book={tempBook} />
+        </section>
     )
 }
 export default MyLibrary

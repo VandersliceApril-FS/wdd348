@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import Search from '../components/Search'
 import SearchResults from "../components/SearchResults"
 
-// https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=5
+// https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=8
 
 function SearchBooks({ setNewBook, savedBooks }) {
     const [query, setQuery] = useState('') // gets the search value from user
@@ -12,7 +12,7 @@ function SearchBooks({ setNewBook, savedBooks }) {
 
     useEffect(() => {
         async function fetchAPI(){
-          const result = await axios(`https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=5`)
+          const result = await axios(`https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=10`)
           setBooks(result.data.docs)
           setIsLoading(false)
         }
