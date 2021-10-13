@@ -18,8 +18,7 @@ function SearchBooks({ setNewBook, savedBooks }) {
         }
         if(query !== '') {
           fetchAPI();
-        }
-        
+        }    
     }, [query]);
 
     return (

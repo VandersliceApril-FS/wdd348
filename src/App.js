@@ -2,36 +2,18 @@ import React, { useState} from "react"
 import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-dom"
 import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
+import { Container, Navbar, Nav } from 'react-bootstrap'
+import './custom.scss'
 
 const styles = {
   container: {
     width: '100%',
     height: '100vh'
   },
-  navContainer: {
-    border: '1px solid red',
-    width: '30rem',
-    display: 'flex',
-    justifyContent: 'space-around'
-  },
   link: {
     textDecoration: 'none',
-    color: '#1C1D21',
-    fontWeight: '400',
-    fontSize: '1.5rem'
+    margin: '0 1rem'
   },
-  header: {
-    height: '5%',
-    width: '100%',
-    border: '1px solid green',
-    display: 'flex',
-    alignItems: 'center'
-  },
-  main: {
-    width: '95%',
-    margin: '3rem auto',
-    border: '1px solid red'
-  }
 }
 
 function App() {
@@ -42,30 +24,28 @@ function App() {
   
   return (
     <Router>
-      <div style={styles.container}>
-        <header style={styles.header}>
-          <nav style={styles.navContainer}>
-              <NavLink 
-                style={styles.link} 
-                to='/'
-                activeStyle={{
-                  borderBottom: '1px solid #452B40',
-                  color: '#452B40'
-                }}>
-                  MyLibrary
-              </NavLink>
-              <NavLink 
-                style={styles.link} 
-                to='/SearchBooks'
-                activeStyle={{
-                  borderBottom: '1px solid #452B40',
-                  color: '#452B40'
-                }}>
-                  Search Books
-              </NavLink>
-          </nav>
-        </header>
-        <main style={styles.main}>
+      <Container fluid>
+        <Navbar>
+            <Navbar.Brand>home-library</Navbar.Brand>
+            <Nav>
+              <Navbar.Text>
+                <NavLink
+                style={styles.link}
+                to='/'>
+                    MyLibrary
+                </NavLink>
+              </Navbar.Text>
+              <Navbar.Text>
+                <NavLink 
+                style={styles.link}
+                to='/SearchBooks'>
+                    Search Books
+                </NavLink>
+              </Navbar.Text>
+                
+            </Nav>
+        </Navbar>
+        <Container fluid>
           <Switch>
               <Route exact path='/'>
                 <h1>My Library</h1>
@@ -76,8 +56,8 @@ function App() {
                 <SearchBooks savedBooks={savedBooks} setNewBook={setNewBook} />
               </Route>
           </Switch>
-        </main>
-       </div>
+        </Container>
+       </Container>
     </Router>
   )    
 }

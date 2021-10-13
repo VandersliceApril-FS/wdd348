@@ -1,28 +1,18 @@
 import React from 'react'
 import './BookItem.css'
+import Image from 'react-bootstrap/Image'
+import { Card, Container, Button } from 'react-bootstrap'
+
+
 
 const styles = {
-    container: {
-        border: '1px solid brown',
-        width: '20rem',
-        height: '32rem',
-        marginBottom: '1rem',
-        display: 'inline-block',
-        position: 'relative'
-    },
     coverImage: {
-        // boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         height: '100%',
         display: 'block',
         margin: 'auto'
     },
-    coverContainer: {
-        height: '18rem',
-        border: '1px solid yellow',
-    },
     itemInfo: {
         margin: '1rem 0',
-        border: '1px solid pink',
         
     },
     author: {
@@ -30,10 +20,6 @@ const styles = {
         fontSize: '1.2rem',
         margin: '0'
     },
-    button: {
-        position: 'absolute',
-        bottom: '2rem'
-    }
 }
 
 
@@ -47,13 +33,13 @@ function BookItem({book, setNewBook, savedBooks }) {
     }
     
     return (
-        <article style={styles.container}>
-            <section style={styles.coverContainer}>
+        <Card style={{ width: '20rem', height: '32rem' }} bg='light'>
+            <Container>
                 {book.cover_i &&
-                    <img src={coverSrc} alt='book cover' style={styles.coverImage}/>
+                    <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
                 }
-            </section>
-            <section style={styles.itemInfo}>
+            </Container>
+            <Card.Body>
                 {book.subtitle 
                     ? <h2 className="title">{book.title}: {book.subtitle}</h2>
                     : <h2 className="title">{book.title}</h2>
@@ -62,9 +48,9 @@ function BookItem({book, setNewBook, savedBooks }) {
                     <h4 style={styles.author}>by {book.author_name[0]}</h4>
                 }
                 <p>Publish Year: {book.first_publish_year} </p>
-            </section>
-            <button style={styles.button} onClick={book => onClick(book)}>Add</button>
-        </article>
+                <Button onClick={book => onClick(book)}>Add</Button>    
+            </Card.Body>
+        </Card>
     )
 }
 
