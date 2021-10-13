@@ -29,12 +29,6 @@ function MyLibrary ({ savedBooks }) {
         ))}
         <BookItem book={tempBook} />
         <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
         </section>
     )
 }
