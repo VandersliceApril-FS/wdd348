@@ -2,6 +2,7 @@ import React, { useState} from "react"
 import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-dom"
 import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
+import PageHeader from './components/PageHeader'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './custom.scss'
 
@@ -12,14 +13,12 @@ const styles = {
   },
   link: {
     textDecoration: 'none',
-    margin: '0 1rem'
+    margin: '0 1rem',
+    color: '#A68A64'
   },
 }
 
 function App() {
-  // savedBooks holds the current array of books the user has saved and
-  // sets any books that are added
-  // gets passed all the way down to the bookItem so its state can be updated after a search
   const [savedBooks, setNewBook] = useState([])
   
   return (
@@ -28,31 +27,34 @@ function App() {
         <Navbar>
             <Navbar.Brand>home-library</Navbar.Brand>
             <Nav>
-              <Navbar.Text>
                 <NavLink
                 style={styles.link}
-                to='/'>
-                    MyLibrary
+                to='/MyLibrary'
+                activeStyle={{
+                  fontWeight: 'bold',
+                  borderBottom: '1px solid #764a6d'
+                }}>
+                    My Library
                 </NavLink>
-              </Navbar.Text>
-              <Navbar.Text>
                 <NavLink 
                 style={styles.link}
-                to='/SearchBooks'>
+                to='/SearchBooks'
+                activeStyle={{
+                  fontWeight: 'bold',
+                  borderBottom: '1px solid #764a6d'
+                }}>
                     Search Books
-                </NavLink>
-              </Navbar.Text>
-                
+                </NavLink>  
             </Nav>
         </Navbar>
         <Container fluid>
           <Switch>
-              <Route exact path='/'>
-                <h1>My Library</h1>
+              <Route exact path='/MyLibrary'>
+                <PageHeader title='My Library' />
                 <MyLibrary savedBooks={savedBooks} />
               </Route>
               <Route path='/SearchBooks'>
-                <h1>Search Books</h1>
+                <PageHeader title='Search Books' />
                 <SearchBooks savedBooks={savedBooks} setNewBook={setNewBook} />
               </Route>
           </Switch>
