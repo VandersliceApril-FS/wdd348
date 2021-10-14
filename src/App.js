@@ -2,8 +2,10 @@ import React, { useState} from "react"
 import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-dom"
 import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
+import Home from './pages/Home'
+import Brand from './images/bookshelf.png'
 import PageHeader from './components/PageHeader'
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import { Image, Container, Navbar, Nav } from 'react-bootstrap'
 import './custom.scss'
 
 const styles = {
@@ -16,6 +18,10 @@ const styles = {
     margin: '0 1rem',
     color: '#A68A64'
   },
+  brand: {
+    height: '4rem',
+    width: '3rem'
+  }
 }
 
 function App() {
@@ -25,7 +31,12 @@ function App() {
     <Router>
       <Container fluid>
         <Navbar>
-            <Navbar.Brand>home-library</Navbar.Brand>
+            <Navbar.Brand>
+              <NavLink 
+                to='/'>
+                  <Image src={Brand} alt='bookshelf brand icon' style={styles.brand} />
+              </NavLink>
+            </Navbar.Brand>
             <Nav>
                 <NavLink
                 style={styles.link}
@@ -49,6 +60,10 @@ function App() {
         </Navbar>
         <Container fluid>
           <Switch>
+              <Route exact path='/'>
+                <PageHeader title='About' />
+                <Home />
+              </Route>
               <Route exact path='/MyLibrary'>
                 <PageHeader title='My Library' />
                 <MyLibrary savedBooks={savedBooks} />
@@ -65,3 +80,5 @@ function App() {
 }
 
 export default App;
+
+// Brand Image Source

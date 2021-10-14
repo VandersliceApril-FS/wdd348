@@ -3,7 +3,7 @@ import React from 'react'
 function Home() {
     return (
         <div>
-            <h2>Home</h2>
+            <p>This app helps keep track of books in your personal library. Add titles of digital and physical books</p>
         </div>
     )
 }
