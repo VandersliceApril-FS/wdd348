@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './BookItem.css'
 import BookPlaceholder from '../../images/book.png'
 import Image from 'react-bootstrap/Image'
-import { Card, Container, Button } from 'react-bootstrap'
+import { Card, Container, Button, Toast } from 'react-bootstrap'
 
 const styles = {
     coverImage: {
@@ -32,13 +32,17 @@ const styles = {
 }
 
 function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
+    const [show, setShow] = useState(false)
+    
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     const onClick = () => {
+        setShow(true)
         setNewBook([...savedBooks, book])
+        
     }
     
     return (
-        <Card style={{ width: '20rem', height: '28rem', padding: '1rem 0' }} bg='light'>
+        <Card style={{ width: '20rem', height: '32rem', padding: '1rem 0' }} bg='light'>
             <Container style={{ height: '16rem'  }}>
                 {book.cover_i
                     ? <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
@@ -61,8 +65,13 @@ function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
                     ? <Button style={{display: 'none'}} onClick={book => onClick(book)}>Add</Button>
                     : <Button onClick={book => onClick(book)}>Add</Button>
                 }
-                
             </Card.Body>
+            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                <Toast.Header>
+                    <strong className="me-auto">Confirmation</strong>
+                    <Toast.Body>Added to your library.</Toast.Body>
+                </Toast.Header>
+            </Toast> 
         </Card>
     )
 }
