@@ -2,19 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;400;500;600;700&family=Lora&display=swap');
 
-h2 {
+.title, .subtitle {
     font-family: 'Lora', serif;
-    font-size: 1.5rem;
+    text-transform: capitalize;
 }
 
 .title {
-    width: 17rem;
+    width: 18rem;
+    font-size: 1.2rem;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    margin: .5rem 0;
-    text-transform: capitalize;
+    margin: .5rem 0 0 0;
 }
 .title:hover {
     overflow: visible;
+}
+.subtitle {
+    font-weight: 200;
+    font-style: italic;
 }
