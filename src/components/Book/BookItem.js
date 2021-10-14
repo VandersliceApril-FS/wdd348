@@ -31,7 +31,7 @@ const styles = {
     
 }
 
-function BookItem({book, setNewBook, savedBooks }) {
+function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     const onClick = () => {
         setNewBook([...savedBooks, book])
@@ -57,7 +57,11 @@ function BookItem({book, setNewBook, savedBooks }) {
                     <h4 style={styles.author}>by {book.author_name[0]}</h4>
                 }
                 <p style={styles.first_publish_year}>Publish Year: {book.first_publish_year} </p>
-                <Button onClick={book => onClick(book)}>Add</Button>    
+                {isInLibrary
+                    ? <Button style={{display: 'none'}} onClick={book => onClick(book)}>Add</Button>
+                    : <Button onClick={book => onClick(book)}>Add</Button>
+                }
+                
             </Card.Body>
         </Card>
     )

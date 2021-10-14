@@ -21,13 +21,15 @@ const styles = {
 }
 
 function MyLibrary ({ savedBooks }) {
+    const isInLibrary = true
     return (savedBooks == null) ? (<p>search for books to add to your library</p>) : (
         <section style={styles.container}>
+
         {savedBooks.map(book => (
-            <BookItem key={book._version_} book={book} />
+            <BookItem key={book._version_} isInLibrary={isInLibrary} book={book} />
         ))}
-        <BookItem book={tempBook} />
-        <BookItem book={tempBook} />
+        <BookItem isInLibrary={isInLibrary} book={tempBook} />
+        <BookItem isInLibrary={isInLibrary} book={tempBook} />
         </section>
     )
 }
