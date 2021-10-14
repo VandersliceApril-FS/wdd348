@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { FiCheckSquare } from 'react-icons/fi'
+
 import './BookItem.css'
 import BookPlaceholder from '../../images/book.png'
 import Image from 'react-bootstrap/Image'
@@ -16,9 +18,6 @@ const styles = {
         display: 'block',
         margin: 'auto',
     },
-    itemInfo: {
-        margin: '1rem 0',
-    },
     author: {
         fontWeight: '300',
         fontSize: '1rem',
@@ -28,7 +27,9 @@ const styles = {
         fontSize: '.75rem',
         fontWeigth: '200'
     },
-    
+    icon: {
+        color: 'green'
+    }
 }
 
 function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
@@ -42,8 +43,8 @@ function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
     }
     
     return (
-        <Card style={{ width: '20rem', height: '32rem', padding: '1rem 0' }} bg='light'>
-            <Container style={{ height: '16rem'  }}>
+        <Card style={{ width: '20rem', height: '28rem', padding: '.5rem 0' }}>
+            <Container style={{ height: '15rem'  }}>
                 {book.cover_i
                     ? <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
                     : <Image src={BookPlaceholder} alt='cover image not available' style={styles.placeholderImage} fluid />
@@ -68,8 +69,7 @@ function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
             </Card.Body>
             <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
                 <Toast.Header>
-                    <strong className="me-auto">Confirmation</strong>
-                    <Toast.Body>Added to your library.</Toast.Body>
+                    <strong className="me-auto"><FiCheckSquare style={styles.icon} /> Book Added</strong>                    
                 </Toast.Header>
             </Toast> 
         </Card>
