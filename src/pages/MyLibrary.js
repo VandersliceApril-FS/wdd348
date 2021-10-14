@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import BookItem from '../components/Book/BookItem'
 
 // static book item used to style the cards
@@ -12,25 +13,17 @@ const tempBook = {
     cover_i: '20450'
 }
 
-const styles = {
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around'
-    }
-}
-
 function MyLibrary ({ savedBooks }) {
     const isInLibrary = true
     return (savedBooks == null) ? (<p>search for books to add to your library</p>) : (
-        <section style={styles.container}>
+        <Container>
 
         {savedBooks.map(book => (
             <BookItem key={book._version_} isInLibrary={isInLibrary} book={book} />
         ))}
         <BookItem isInLibrary={isInLibrary} book={tempBook} />
         <BookItem isInLibrary={isInLibrary} book={tempBook} />
-        </section>
+        </Container>
     )
 }
 export default MyLibrary

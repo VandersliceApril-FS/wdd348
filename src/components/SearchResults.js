@@ -5,7 +5,6 @@ const styles = {
     container: {
         display: 'flex',
         flexWrap: 'wrap',
-        border: '1px solid yellow',
         justifyContent: 'space-around'
     }
 }

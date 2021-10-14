@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { FiCheckSquare } from 'react-icons/fi'
-
 import './BookItem.css'
 import BookPlaceholder from '../../images/book.png'
 import Image from 'react-bootstrap/Image'
@@ -28,22 +27,20 @@ const styles = {
         fontWeigth: '200'
     },
     icon: {
-        color: 'green'
+        color: 'green',
+        marginRight: '.5rem'
     }
 }
 
 function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
     const [show, setShow] = useState(false)
-    
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     const onClick = () => {
         setShow(true)
         setNewBook([...savedBooks, book])
-        
     }
-    
     return (
-        <Card style={{ width: '20rem', height: '28rem', padding: '.5rem 0' }}>
+        <Card style={{ width: '18rem', height: '28rem', padding: '.5rem 0', margin: '0 0 1rem 0' }}>
             <Container style={{ height: '15rem'  }}>
                 {book.cover_i
                     ? <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
@@ -69,7 +66,8 @@ function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
             </Card.Body>
             <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
                 <Toast.Header>
-                    <strong className="me-auto"><FiCheckSquare style={styles.icon} /> Book Added</strong>                    
+                    <FiCheckSquare style={styles.icon} />
+                    <strong>Book Added</strong>
                 </Toast.Header>
             </Toast> 
         </Card>

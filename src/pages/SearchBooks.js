@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react"
 import Search from '../components/Search'
 import SearchResults from "../components/SearchResults"
+import { Container } from 'react-bootstrap'
 
 // https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=8
 
@@ -22,14 +23,14 @@ function SearchBooks({ setNewBook, savedBooks }) {
     }, [query]);
 
     return (
-        <div>
-          <div>
+        <Container>
+          
             <Search getQuery={q => setQuery(q)} />
-          </div>
+          
           {books &&
             <SearchResults savedBooks={savedBooks} isLoading={isLoading} books={books} setNewBook={setNewBook} />
           }    
-        </div>
+        </Container>
         );
 }
 export default SearchBooks

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 
 function Search({ getQuery }) {
     const [text, setText] = useState('')
@@ -9,7 +9,7 @@ function Search({ getQuery }) {
     }
     
     return (
-        <section>
+        <Container style={{margin: '2rem 0'}}>
             <Form>
                 <Form.Control as="input" 
                 value={text}
@@ -17,7 +17,7 @@ function Search({ getQuery }) {
                 onChange={e => onChange(e.target.value)}
                 />
             </Form>
-        </section>
+        </Container>
     )
 }
 
