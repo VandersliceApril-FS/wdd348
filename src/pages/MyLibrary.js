@@ -26,7 +26,7 @@ function MyLibrary ({ savedBooks, updateSavedBooks }) {
     const isInLibrary = true
     const deleteBook = key => {
         const removed = savedBooks.splice(key, 1)
-        updateSavedBooks()
+        updateSavedBooks([...savedBooks])
         console.log(removed)
     }
 
