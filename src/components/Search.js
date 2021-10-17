@@ -11,7 +11,8 @@ function Search({ getQuery }) {
     return (
         <Container style={{margin: '2rem 0'}}>
             <Form>
-                <Form.Control as="input" 
+                <Form.Control as="input"
+                placeholder="search by author or title"
                 value={text}
                 // throttling, debouncing, backing off
                 onChange={e => onChange(e.target.value)}

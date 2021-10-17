@@ -4,7 +4,6 @@ import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
 import Home from './pages/Home'
 import Brand from './images/brand-01.png'
-import PageHeader from './components/PageHeader'
 import { Image, Container, Nav } from 'react-bootstrap'
 import './custom.scss'
 import { FaUser } from "react-icons/fa";
@@ -29,6 +28,9 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     margin: '0 1rem 2rem 1rem'
+  },
+  main: {
+    margin: '3rem 0 0 0 '
   }
 }
 
@@ -67,10 +69,9 @@ function App() {
                 </NavLink>  
             </Nav>
         
-        <Container fluid>
+        <Container style={styles.main} fluid>
           <Switch>
               <Route exact path='/'>
-                <PageHeader title="Home" />
                 <Home />
               </Route>
               <Route exact path='/MyLibrary'>

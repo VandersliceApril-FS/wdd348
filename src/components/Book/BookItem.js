@@ -65,22 +65,16 @@ function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook})
                     ? <button style={styles.deleteButton} onClick={deleteBook}>Delete </button>
                     : <Button onClick={book => onClick(book)}>Add</Button>
                 }
+                <Toast style={styles.toast} onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                    <Toast.Body>
+                        <FiCheckSquare style={styles.icon} />
+                        <strong>Book Added</strong>
+                    </Toast.Body>
+                </Toast> 
             </Card.Body>
-            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                <Toast.Body>
-                    <FiCheckSquare style={styles.icon} />
-                    <strong>Book Added</strong>
-                </Toast.Body>
-            </Toast> 
+            
         </Card>
     )
 }
 
 export default BookItem
-
-// {book.isbn && 
-// <p>ISBN: {book.isbn[0]}</p>
-// }
-// <p>Version: {book._version_}</p>
-
-// Placeholder image source: <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

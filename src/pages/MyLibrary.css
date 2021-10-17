@@ -1,0 +1,12 @@
+.libraryContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .libraryContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
