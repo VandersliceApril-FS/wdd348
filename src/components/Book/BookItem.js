@@ -68,10 +68,10 @@ function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook})
                 }
             </Card.Body>
             <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                <Toast.Header>
+                <Toast.Body>
                     <FiCheckSquare style={styles.icon} />
                     <strong>Book Added</strong>
-                </Toast.Header>
+                </Toast.Body>
             </Toast> 
         </Card>
     )
