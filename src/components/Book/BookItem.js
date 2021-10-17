@@ -29,6 +29,13 @@ const styles = {
     icon: {
         color: 'green',
         marginRight: '.5rem'
+    },
+    deleteButton: {
+        background: 'transparent',
+        color: 'red',
+        border: 'none',
+        position: 'absolute',
+        bottom: '0',
     }
 }
 
@@ -42,7 +49,7 @@ function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook})
 
     
     return (
-        <Card style={{ width: '18rem', height: '28rem', padding: '.5rem 0', margin: '0 0 1rem 0' }}>
+        <Card style={{ width: '18rem', height: '28rem', padding: '1rem 0 .5rem 0', margin: '0 0 1rem 0' }}>
             <Container style={{ height: '15rem'  }}>
                 {book.cover_i
                     ? <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
@@ -56,7 +63,7 @@ function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook})
                 }
                 <p style={styles.first_publish_year}>Publish Year: {book.first_publish_year} </p>
                 {isInLibrary
-                    ? <Button onClick={deleteBook}>Delete</Button>
+                    ? <button style={styles.deleteButton} onClick={deleteBook}>Delete </button>
                     : <Button onClick={book => onClick(book)}>Add</Button>
                 }
             </Card.Body>
