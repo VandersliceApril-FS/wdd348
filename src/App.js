@@ -3,10 +3,11 @@ import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-do
 import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
 import Home from './pages/Home'
-import Brand from './images/bookshelf.png'
+import Brand from './images/brand-01.png'
 import PageHeader from './components/PageHeader'
-import { Image, Container, Navbar, Nav } from 'react-bootstrap'
+import { Image, Container, Nav } from 'react-bootstrap'
 import './custom.scss'
+import { FaUser } from "react-icons/fa";
 
 const styles = {
   container: {
@@ -15,35 +16,42 @@ const styles = {
   },
   link: {
     textDecoration: 'none',
+    fontSize: '2rem',
     margin: '0 1rem',
-    color: '#A68A64'
+    color: '#E1D8CB',
+    
   },
   brand: {
-    height: '4rem',
-    width: '3rem'
+    height: '3rem',
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: '0 1rem 2rem 1rem'
   }
 }
 
 function App() {
   const [savedBooks, updateSavedBooks] = useState([])
-  
   return (
     <Router>
       <Container fluid>
-        <Navbar>
-            <Navbar.Brand>
+          <header style={styles.header}>
               <NavLink 
                 to='/'>
                   <Image src={Brand} alt='bookshelf brand icon' style={styles.brand} />
               </NavLink>
-            </Navbar.Brand>
-            <Nav>
+              <FaUser />
+          </header>
+            <Nav className='justify-content-center'>
                 <NavLink
                 style={styles.link}
                 to='/MyLibrary'
                 activeStyle={{
                   fontWeight: 'bold',
-                  borderBottom: '1px solid #764a6d'
+                  borderBottom: '1px solid #764a6d',
+                  color: '#A68A64'
                 }}>
                     My Library
                 </NavLink>
@@ -52,24 +60,23 @@ function App() {
                 to='/SearchBooks'
                 activeStyle={{
                   fontWeight: 'bold',
-                  borderBottom: '1px solid #764a6d'
+                  borderBottom: '1px solid #764a6d',
+                  color: '#A68A64'
                 }}>
                     Search Books
                 </NavLink>  
             </Nav>
-        </Navbar>
+        
         <Container fluid>
           <Switch>
               <Route exact path='/'>
-                <PageHeader title='About' />
+                <PageHeader title="Home" />
                 <Home />
               </Route>
               <Route exact path='/MyLibrary'>
-                <PageHeader title='My Library' />
                 <MyLibrary savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
               </Route>
               <Route path='/SearchBooks'>
-                <PageHeader title='Search Books' />
                 <SearchBooks savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
               </Route>
           </Switch>
@@ -80,5 +87,3 @@ function App() {
 }
 
 export default App;
-
-// Brand Image Source

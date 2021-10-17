@@ -24,9 +24,7 @@ function SearchBooks({ updateSavedBooks, savedBooks }) {
 
     return (
         <Container>
-          
             <Search getQuery={q => setQuery(q)} />
-          
           {books &&
             <SearchResults savedBooks={savedBooks} isLoading={isLoading} books={books} updateSavedBooks={updateSavedBooks} />
           }    

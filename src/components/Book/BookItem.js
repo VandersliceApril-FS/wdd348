@@ -47,10 +47,9 @@ function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook})
         updateSavedBooks([...savedBooks, book])
     }
 
-    
     return (
         <Card style={{ width: '18rem', height: '28rem', padding: '1rem 0 .5rem 0', margin: '0 0 1rem 0' }}>
-            <Container style={{ height: '15rem'  }}>
+            <Container style={{ height: '15rem' }}>
                 {book.cover_i
                     ? <Image src={coverSrc} alt='book cover' style={styles.coverImage} fluid />
                     : <Image src={BookPlaceholder} alt='cover image not available' style={styles.placeholderImage} fluid />
