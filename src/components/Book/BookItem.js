@@ -32,13 +32,15 @@ const styles = {
     }
 }
 
-function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
+function BookItem({book, updateSavedBooks, savedBooks, isInLibrary, deleteBook}) {
     const [show, setShow] = useState(false)
     const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     const onClick = () => {
         setShow(true)
-        setNewBook([...savedBooks, book])
+        updateSavedBooks([...savedBooks, book])
     }
+
+    
     return (
         <Card style={{ width: '18rem', height: '28rem', padding: '.5rem 0', margin: '0 0 1rem 0' }}>
             <Container style={{ height: '15rem'  }}>
@@ -48,19 +50,13 @@ function BookItem({book, setNewBook, savedBooks, isInLibrary}) {
                 }
             </Container>
             <Card.Body>
-                {book.subtitle 
-                    ? <div>
-                        <h2 className="title">{book.title}</h2>
-                        <p className="subtitle">{book.subtitle}</p>
-                    </div>
-                    : <h2 className="title">{book.title}</h2>
-                }        
+                <h2 className="title">{book.title}</h2>
                 {book.author_name &&
                     <h4 style={styles.author}>by {book.author_name[0]}</h4>
                 }
                 <p style={styles.first_publish_year}>Publish Year: {book.first_publish_year} </p>
                 {isInLibrary
-                    ? <Button style={{display: 'none'}} onClick={book => onClick(book)}>Add</Button>
+                    ? <Button onClick={deleteBook}>Delete</Button>
                     : <Button onClick={book => onClick(book)}>Add</Button>
                 }
             </Card.Body>

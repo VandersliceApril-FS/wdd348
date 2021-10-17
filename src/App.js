@@ -25,7 +25,7 @@ const styles = {
 }
 
 function App() {
-  const [savedBooks, setNewBook] = useState([])
+  const [savedBooks, updateSavedBooks] = useState([])
   
   return (
     <Router>
@@ -66,11 +66,11 @@ function App() {
               </Route>
               <Route exact path='/MyLibrary'>
                 <PageHeader title='My Library' />
-                <MyLibrary savedBooks={savedBooks} />
+                <MyLibrary savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
               </Route>
               <Route path='/SearchBooks'>
                 <PageHeader title='Search Books' />
-                <SearchBooks savedBooks={savedBooks} setNewBook={setNewBook} />
+                <SearchBooks savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
               </Route>
           </Switch>
         </Container>

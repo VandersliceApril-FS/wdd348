@@ -1,5 +1,4 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
 import BookItem from '../components/Book/BookItem'
 
 // static book item used to style the cards
@@ -20,18 +19,28 @@ const styles = {
         display: 'grid',
         gridTemplateColumns: 'repeat(5, 1fr)',
         gap: '1rem'
-    }
+    },
 }
 
-function MyLibrary ({ savedBooks }) {
+function MyLibrary ({ savedBooks, updateSavedBooks }) {
     const isInLibrary = true
+    const deleteBook = key => {
+        const removed = savedBooks.splice(key, 1)
+        updateSavedBooks()
+        console.log(removed)
+    }
+
     return (savedBooks == null) ? (<p>search for books to add to your library</p>) : (
         <section style={styles.container}>    
-            {savedBooks.map(book => (
-                <BookItem key={book._version_} isInLibrary={isInLibrary} book={book} />
+            {savedBooks.map((book, i) => (
+                
+                <BookItem key={i} isInLibrary={isInLibrary} book={book} deleteBook={() => deleteBook(i)} />
+                
+                
             ))}
             <BookItem isInLibrary={isInLibrary} book={tempBook} />
             <BookItem isInLibrary={isInLibrary} book={tempBook} />
+
         </section>
     )
 }

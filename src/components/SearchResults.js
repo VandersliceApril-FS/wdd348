@@ -10,11 +10,13 @@ const styles = {
 }
 
 
-function SearchResults({ isLoading, books, setNewBook, savedBooks}) {
+function SearchResults({ isLoading, books, updateSavedBooks, savedBooks}) {
+
+
     return isLoading ? (<h1>Loading...</h1>) : (
         <section style={styles.container}>
             {books.map(book => (
-                <BookItem savedBooks={savedBooks} key={book._version_} book={book} setNewBook={setNewBook}></BookItem>
+                <BookItem savedBooks={savedBooks} key={book._version_} book={book} updateSavedBooks={updateSavedBooks}></BookItem>
             ))}
         </section>
     )

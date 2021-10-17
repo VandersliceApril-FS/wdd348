@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap'
 
 // https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=8
 
-function SearchBooks({ setNewBook, savedBooks }) {
+function SearchBooks({ updateSavedBooks, savedBooks }) {
     const [query, setQuery] = useState('') // gets the search value from user
     const [isLoading, setIsLoading] = useState(true)
     const [books, setBooks] = useState(null) // search results
@@ -28,7 +28,7 @@ function SearchBooks({ setNewBook, savedBooks }) {
             <Search getQuery={q => setQuery(q)} />
           
           {books &&
-            <SearchResults savedBooks={savedBooks} isLoading={isLoading} books={books} setNewBook={setNewBook} />
+            <SearchResults savedBooks={savedBooks} isLoading={isLoading} books={books} updateSavedBooks={updateSavedBooks} />
           }    
         </Container>
         );
