@@ -12,18 +12,12 @@ const styles = {
     }
 }
 
-function MyLibrary ({ updateSavedBooks }) {
+function MyLibrary () {
     const { savedBooks } = useContext(GlobalContext);
-    const isInLibrary = true
-    const deleteBook = key => {
-        const removed = savedBooks.splice(key, 1)
-        updateSavedBooks([...savedBooks])
-        console.log(removed)
-    }
     return (savedBooks.length === 0) ? (<h5 style={styles.instruction}>Search for books to add to your library</h5>) : (
         <Container className="libraryContainer">    
-            {savedBooks.map((book, i) => (
-                <BookItem key={i} isInLibrary={isInLibrary} book={book} deleteBook={() => deleteBook(i)} />
+            {savedBooks.map((book) => (
+                <BookItem key={book.id} book={book} />
             ))}
         </Container>
     )

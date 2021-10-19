@@ -1,4 +1,3 @@
-import React from 'react'
 import ResultsGrid from '../components/ResultsGrid'
 import { Table } from 'react-bootstrap'
 

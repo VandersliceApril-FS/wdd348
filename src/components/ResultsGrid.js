@@ -8,6 +8,7 @@ function ResultsGrid({ result }) {
 
     const onClick = () => {
         const newBook = {
+            id: `${result._version_}`,
             title: `${result.title}`,
             author_name: `${result.author_name}`,
             cover_i: `${result.cover_i}`,

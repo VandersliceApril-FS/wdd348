@@ -7,6 +7,12 @@ export default (state, action) => {
                 // return the current saved books, add the new one in the payload. 
                 savedBooks: [action.payload, ...state.savedBooks]
             }
+        case 'DELETE_BOOK':
+            return {
+                ...state,
+                // return all books except the one deleted
+                savedBooks: state.savedBooks.filter(book => book.id !== action.payload)
+            }
         default: 
             return state;
     }

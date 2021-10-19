@@ -4,7 +4,7 @@ import AppReducer from './AppReducer'
 // Initial State
 const initialstate = {
     savedBooks: [
-        { title: 'On Writing Well', author_name: ['William Zinsser'], cover_i: '20450', first_publish_year: '1976'}
+        { id: '0000', title: 'On Writing Well', author_name: ['William Zinsser'], cover_i: '20450', first_publish_year: '1976'}
     ]
 }
 
@@ -22,12 +22,19 @@ export const GlobalProvider = ({ children }) => {
             payload: book
         })
     }
+    function deleteBook(id) {
+        dispatch({
+            type: 'DELETE_BOOK',
+            payload: id
+        })
+    }
 
 
     // provider provides state and actions to components it is wrapped around
     return (<GlobalContext.Provider value={{
         savedBooks:state.savedBooks,
-        addBook
+        addBook,
+        deleteBook
     }}>
         {children}
     </GlobalContext.Provider>
