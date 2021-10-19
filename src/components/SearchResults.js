@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from '../context/GlobalState'
 import BookItem from './Book/BookItem'
 
 const styles = {

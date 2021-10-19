@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalState'
 import { Container } from 'react-bootstrap'
 import BookItem from '../components/Book/BookItem'
 import './MyLibrary.css'
@@ -11,8 +12,8 @@ const styles = {
     }
 }
 
-function MyLibrary ({ savedBooks, updateSavedBooks }) {
-    console.log(savedBooks)
+function MyLibrary ({ updateSavedBooks }) {
+    const { savedBooks } = useContext(GlobalContext);
     const isInLibrary = true
     const deleteBook = key => {
         const removed = savedBooks.splice(key, 1)
