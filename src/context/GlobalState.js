@@ -14,9 +14,20 @@ export const GlobalContext = createContext(initialstate);
 // provider component
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialstate);
+
+    // Actions
+    function addBook(book) {
+        dispatch({
+            type: 'ADD_BOOK',
+            payload: book
+        })
+    }
+
+
     // provider provides state and actions to components it is wrapped around
     return (<GlobalContext.Provider value={{
-        savedBooks:state.savedBooks
+        savedBooks:state.savedBooks,
+        addBook
     }}>
         {children}
     </GlobalContext.Provider>

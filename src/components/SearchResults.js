@@ -1,22 +1,28 @@
-import React, { useState, useContext } from 'react'
-import { GlobalContext } from '../context/GlobalState'
-import BookItem from './Book/BookItem'
+import React from 'react'
+import ResultsGrid from '../components/ResultsGrid'
+import { Table } from 'react-bootstrap'
 
-const styles = {
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around'
-    }
-}
 
-function SearchResults({ isLoading, books, updateSavedBooks, savedBooks}) {
+function SearchResults({ isLoading, searchResults }) {
+
     return isLoading ? (<h1>Loading...</h1>) : (
-        <section style={styles.container}>
-            {books.map(book => (
-                <BookItem savedBooks={savedBooks} key={book._version_} book={book} updateSavedBooks={updateSavedBooks} ></BookItem>
-            ))}
-        </section>
+        <Table>
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>First Published</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {searchResults.map(searchResult => (
+                    <ResultsGrid key={searchResult._version_} result={searchResult} ></ResultsGrid>
+                ))}
+            </tbody>
+            
+        </Table>
     )
 }
 

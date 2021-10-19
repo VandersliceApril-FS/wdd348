@@ -1,4 +1,4 @@
-import React, { useState} from "react"
+import React from "react"
 import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-dom"
 import MyLibrary from './pages/MyLibrary'
 import SearchBooks from "./pages/SearchBooks"
@@ -36,7 +36,6 @@ const styles = {
 }
 
 function App() {
-  const [savedBooks, updateSavedBooks] = useState([])
   return (
     <GlobalProvider>
       <Router>
@@ -77,10 +76,10 @@ function App() {
                   <Home />
                 </Route>
                 <Route exact path='/MyLibrary'>
-                  <MyLibrary savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
+                  <MyLibrary />
                 </Route>
                 <Route path='/SearchBooks'>
-                  <SearchBooks savedBooks={savedBooks} updateSavedBooks={updateSavedBooks} />
+                  <SearchBooks />
                 </Route>
             </Switch>
           </Container>
