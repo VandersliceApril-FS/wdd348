@@ -5,7 +5,7 @@ import { GlobalContext } from '../context/GlobalState'
 const styles = {
     button: {
         width: 'fit-content',
-        background: '#764a6d',
+        background: '#5F0A87',
         padding: '.5rem 1rem',
         color: '#fff',
         border: 'none',

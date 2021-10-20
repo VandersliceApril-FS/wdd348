@@ -1,0 +1,14 @@
+@media (max-width: 600px) {
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.navLink {
+    margin: 1rem;
+    text-decoration: none;
+    color: #BCB8B1;
+}

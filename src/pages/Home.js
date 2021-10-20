@@ -1,9 +1,6 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-import HeroImage from '../images/ereader.jpg'
-
-
 
 const styles = {
     container: {
@@ -13,21 +10,23 @@ const styles = {
     hero: {
         height: '35rem'
     },
-    headingContainer: {
-        padding: '4rem',
-    },
     heading: {
         marginBottom: '2rem',
-        fontSize: '3rem'
+        fontSize: '2rem'
     },
     button: {
-        marginTop: '2rem'
+        width: 'fit-content',
+        background: '#5F0A87',
+        padding: '.5rem 1rem',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '2px'
     }
 }
 
 function Home() {
     return (
-        <Container style={styles.container}>
+        <Container>
             <div style={styles.headingContainer}>
                 <h1 style={styles.heading}><strong>Keep track</strong> of all books in your library</h1>
                 <p>We currently live in a sort of limbo where some of our books live on the shelf and some live in a device. Keep track of both digital and physical books by cataloguing them in home library.</p>
@@ -43,9 +42,9 @@ function Home() {
                 </NavLink>  
                 
             </div>
-            <div style={styles.heroContainer}>
+            {/* <div style={styles.heroContainer}>
                 <img style={styles.hero} src={HeroImage} alt="" />
-            </div>
+            </div> */}
             
         </Container>
     )
