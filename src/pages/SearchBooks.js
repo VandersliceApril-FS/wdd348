@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react"
-import Search from '../components/Search'
+import Search from '../components/Search/Search'
 import SearchResults from "../components/SearchResults/SearchResults"
-import { Container } from 'react-bootstrap'
+
 
 // https://openlibrary.org/search.json?title=${query}&fields=title,author_name,cover_i,first_publish_year,_version_,isbn,availability&limit=8
 
@@ -23,12 +23,12 @@ function SearchBooks() {
     }, [query]);
 
     return (
-        <Container>
+        <>
             <Search getQuery={q => setQuery(q)} />
           {searchResults &&
             <SearchResults isLoading={isLoading} searchResults={searchResults} />
           }    
-        </Container>
+        </>
         );
 }
 export default SearchBooks

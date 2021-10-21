@@ -9,8 +9,9 @@ function MainNav() {
             className='navLink'
             to='/MyLibrary'
             activeStyle={{
-              fontWeight: 'bold',
-              color: '#5F0A87'
+              fontSize: '1.7rem',
+              fontWeight: '700',
+              color: '#463f3a'
               }}>
                 My Library
           </NavLink>
@@ -18,8 +19,9 @@ function MainNav() {
             className='navLink'
             to='/SearchBooks'
             activeStyle={{
-              fontWeight: 'bold',
-              color: '#5F0A87'
+              fontSize: '1.7rem',
+              fontWeight: '700',
+              color: '#463f3a'
             }}>
                 Search Books
           </NavLink>  

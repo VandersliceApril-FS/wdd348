@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    justify-content: center;
+    
+}
+input {
+    border: none;
+    background-color: #f4f3ee;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 4px;
+}
+
+@media all and (min-width: 600px) {
+    input {
+      width: 80%;
+    }
+  }
