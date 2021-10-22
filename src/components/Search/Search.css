@@ -3,18 +3,21 @@ form {
     justify-content: center;
     margin-bottom: 1rem;
 }
-input {
+
+input[type="text"] {
     border: none;
     background-color: #f4f3ee;
     height: 3.2rem;
     padding: 0 1rem;
     border-radius: 4px;
     width: 100%;
-    
+    font-size: 16px; /* set to 16px to prevent zoom in on input focus on mobile  */
 }
 
+
+
 @media all and (min-width: 600px) {
-    input {
-      width: 80%;
-    }
+   input[type="text"] {
+       font-size: 1rem;
+   }
   }

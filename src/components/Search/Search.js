@@ -10,7 +10,7 @@ function Search({ getQuery }) {
     
     return (
         <form>
-            <input
+            <input type="text"
             placeholder="search by author or title"
             value={text}
             // throttling, debouncing, backing off

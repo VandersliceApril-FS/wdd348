@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import './ResultCard.css'
 import { GlobalContext } from '../../context/GlobalState'
-import BookPlaceholder from '../../images/book.png'
-
-
 
 function ResultCard({ result }) {
     const {addBook}  = useContext(GlobalContext);
-    const coverSrc = `http://covers.openlibrary.org/b/id/${result.cover_i}-S.jpg`
+    const [showAlert, setShowAlert] = useState(false);
 
     const onClick = () => {
         console.log('add button clicked')
@@ -16,29 +13,31 @@ function ResultCard({ result }) {
             title: `${result.title}`,
             author_name: `${result.author_name[0]}`,
             cover_i: `${result.cover_i}`,
-            first_publish_year: `${result.first_publish_year}`
+            first_publish_year: `${result.first_publish_year}`,
+            isbn: `${result.isbn}`
         }
         addBook(newBook);
+        setShowAlert(true);
     }
     
     return (
-        <article className="container">
+        <article className="resultContainer">
             <div className="card">
-                    {result.cover_i
-                        ? <img src={coverSrc} alt='book cover' className="coverImage" />
-                        : <img src={BookPlaceholder} alt='cover not available' className="coverImage" />
-                    }
-                <section className="bookInfo">
-                    <h2 className="title">{result.title}</h2>
+                <section className="bookResultInfo">
+                    <h2 className="resultTitle">{result.title}</h2>
                     {result.author_name &&
                         <h4 className="author">by {result.author_name}</h4>
                     }
-                    <p className="publishYear">Publish Year: {result.first_publish_year} </p>
-                
+                    <p className="identifiers">Published {result.first_publish_year} </p>
+                    {result.isbn &&
+                    <p className="identifiers">ISBN: {result.isbn[0]}</p>
+                    }
                 </section>
             </div>
-            <button className="buttonPrimary" onClick={onClick}>Add</button>
-            
+                {showAlert
+                    ? <button disabled={true} className="successAlert">Book Added!</button> 
+                    : <button className="linkButton" onClick={onClick}>Add</button>
+                }
         </article>
     )
 }

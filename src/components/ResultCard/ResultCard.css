@@ -1,1 +1,38 @@
+.resultContainer {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    border-bottom: .5px solid #bcb8b1;
+}
 
+.resultTitle {
+    font-size: .75rem;
+    font-weight: 500;
+    margin: 0;
+}
+.linkButton {
+    background: transparent;
+    color: #5F0A87;
+    border: none;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.successAlert {
+    background: transparent;
+    color: green;
+    border: none;
+    font-weight: 700;
+}
+
+
+@media all and (min-width: 600px) {
+    .cardContainer {
+        width: 100%;
+    }
+    .linkButton, .successAlert {
+        font-size: 1rem;
+    }
+    
+}

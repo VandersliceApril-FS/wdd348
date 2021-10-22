@@ -31,7 +31,8 @@ function BookItem({ book }) {
                     {book.author_name &&
                         <h4 className="author">by {book.author_name}</h4>
                     }
-                    <p className="publishYear">Publish Year: {book.first_publish_year} </p>
+                    <p className="identifiers">Publish Year: {book.first_publish_year} </p>
+                    <p className="identifiers">{book.isbn}</p>
                 </section>
             </div>
             <button style={styles.deleteButton} onClick={() => deleteBook(book.id)}>x</button>
