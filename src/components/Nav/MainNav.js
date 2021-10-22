@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
+
+
 function MainNav() {
     return (
       <nav>
@@ -22,7 +24,7 @@ function MainNav() {
               fontSize: '1.5rem',
               fontWeight: '700',
               color: '#463f3a'
-            }}>
+              }}>
                 Search Books
           </NavLink>  
       </nav>
