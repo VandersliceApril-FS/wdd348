@@ -1,7 +1,6 @@
 import ResultCard from '../ResultCard/ResultCard'
 import '../SearchResults/SearchResults.css'
 
-
 function SearchResults({ isLoading, searchResults }) {
 
     return isLoading ? (<h1>Loading...</h1>) : (
