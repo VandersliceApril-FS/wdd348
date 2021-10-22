@@ -9,10 +9,9 @@ input {
     height: 3rem;
     padding: 0 1rem;
     border-radius: 4px;
+    width: 80%;
 }
 
 @media all and (min-width: 600px) {
-    input {
-      width: 80%;
-    }
+  
   }
