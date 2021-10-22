@@ -9,6 +9,11 @@ body {
     
   }
 
+  .homeContainer {
+      width: 80%;
+      margin: 0 auto;
+  }
+
 .buttonPrimary {
     width: fit-content;
     background: #5F0A87;
@@ -67,6 +72,16 @@ body {
 @media all and (min-width: 768px) {
     body {
         background: #F6F5F4;
+    }
+    .aboutContainer {
+        margin: 3rem auto;
+    }
+    .homeHeader {
+        font-size: 3rem;
+        
+    }
+    .homeAbout {
+        font-size: 1rem;
     }
     .cardContainer {
         width: 19rem;
