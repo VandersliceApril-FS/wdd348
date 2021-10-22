@@ -14,7 +14,7 @@ function ResultCard({ result }) {
             author_name: `${result.author_name[0]}`,
             cover_i: `${result.cover_i}`,
             first_publish_year: `${result.first_publish_year}`,
-            isbn: `${result.isbn}`
+            isbn: `${result.isbn[0]}`
         }
         addBook(newBook);
         setShowAlert(true);
@@ -28,7 +28,6 @@ function ResultCard({ result }) {
                     {result.author_name &&
                         <h4 className="author">by {result.author_name}</h4>
                     }
-                    <p className="identifiers">Published {result.first_publish_year} </p>
                     {result.isbn &&
                     <p className="identifiers">ISBN: {result.isbn[0]}</p>
                     }

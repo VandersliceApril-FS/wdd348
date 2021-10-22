@@ -11,7 +11,7 @@ function Search({ getQuery }) {
     return (
         <form>
             <input type="text"
-            placeholder="search by author or title"
+            placeholder="search a title"
             value={text}
             // throttling, debouncing, backing off
             onChange={e => onChange(e.target.value)}

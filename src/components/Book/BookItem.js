@@ -11,28 +11,33 @@ const styles = {
         fontWeight: '500',
         fontSize: '1rem',
         background: 'transparent',
-        color: 'red'
+        color: '#8a817c',
+        
     },
 }
 
 function BookItem({ book }) {
     const {deleteBook} = useContext(GlobalContext)
 
-    const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+    const coverSrc = `http://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
     return (
         <article className="cardContainer">
             <div className="card">
+                <div className="coverContainer">
                     {book.cover_i
                         ? <img src={coverSrc} alt='book cover' className="coverImage" />
                         : <img src={BookPlaceholder} alt='cover not available' className="coverImage" />
                     }
+                </div>
+                    
                 <section className="bookInfo">
                     <h2 className="title">{book.title}</h2>
                     {book.author_name &&
                         <h4 className="author">by {book.author_name}</h4>
                     }
-                    <p className="identifiers">Publish Year: {book.first_publish_year} </p>
-                    <p className="identifiers">{book.isbn}</p>
+                    {book.isbn && 
+                        <p className="identifiers">ISBN: {book.isbn}</p>
+                    }
                 </section>
             </div>
             <button style={styles.deleteButton} onClick={() => deleteBook(book.id)}>x</button>

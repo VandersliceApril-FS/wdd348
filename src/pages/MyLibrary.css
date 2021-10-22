@@ -1,15 +1,25 @@
 .libraryContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    width: 80%;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media (max-width: 600px) {
-    .libraryContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+@media all and (min-width: 601px) and (max-width: 800px) {
+  .libraryContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
   }
+}
+
+
+@media screen and (min-width: 801px) {
+    .libraryContainer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .25rem;
+      margin: 0 auto;
+  }
+}
+

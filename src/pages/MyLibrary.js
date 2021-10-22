@@ -5,7 +5,6 @@ import BookItem from '../components/Book/BookItem'
 import './MyLibrary.css'
 
 const styles = {
-
     instruction: {
         textAlign: 'center',
         margin: '4rem'

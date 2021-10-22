@@ -23,27 +23,31 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid #bcb8b1;
-    
+    border-bottom: .5px solid #bcb8b1;
+    margin-bottom: .25rem;
 }
 .card {
     display: flex;
     flex-direction: row;
     border: none;
-    background: transparent;
 }
 
 .title {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: .9rem;
     margin: 0;
     font-family: 'Merriweather', serif;
     text-transform: capitalize;
 }
-.coverImage {
-    height: 6rem;
+.coverContainer {
+    max-height: 6rem;
+    max-width: 4rem;
+    overflow: hidden;
+    padding-bottom: .25rem;
 }
-
+.coverImage {
+    height: 100%;
+}
 .author {
     font-weight: 400;
     font-size: .7rem;
@@ -53,16 +57,18 @@ body {
     font-size: .65rem;
     font-weight: 300;
     margin: 0;
-    color: slategrey;
-    
 }
 .bookInfo {
-    padding: .5rem 0 0 1rem;
+    margin: .5rem;
+    max-width: 13rem;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 768px) {
     .cardContainer {
-        width: 18rem;
+        width: 19rem;
+    }
+    .title {
+        font-size: 1rem;
     }
     main {
         max-width: 95%;

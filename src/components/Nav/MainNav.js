@@ -9,7 +9,7 @@ function MainNav() {
             className='navLink'
             to='/MyLibrary'
             activeStyle={{
-              fontSize: '1.6rem',
+              fontSize: '1.5rem',
               fontWeight: '700',
               color: '#463f3a'
               }}>
@@ -19,7 +19,7 @@ function MainNav() {
             className='navLink'
             to='/SearchBooks'
             activeStyle={{
-              fontSize: '1.6rem',
+              fontSize: '1.5rem',
               fontWeight: '700',
               color: '#463f3a'
             }}>

@@ -4,7 +4,7 @@ import AppReducer from './AppReducer'
 // Initial State
 const initialstate = {
     savedBooks: [
-        { id: '0000', title: 'On Writing Well', author_name: ['William Zinsser'], cover_i: '20450', first_publish_year: '1976'}
+        { id: '0000', title: 'On Writing Well', author_name: ['William Zinsser'], cover_i: '20450', isbn: ['9780060891541']}
     ]
 }
 
