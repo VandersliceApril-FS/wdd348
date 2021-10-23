@@ -37,7 +37,6 @@ body {
     flex-direction: row;
     border: none;
 }
-
 .title {
     font-weight: 700;
     font-size: .9rem;
@@ -96,6 +95,13 @@ body {
     }
     main {
         max-width: 95%;
+    }
+    input[type="text"] {
+        font-size: 1rem;
+        background-color: #fff;
+    }
+    nav {
+        font-size: 2rem;
     }
 }
 

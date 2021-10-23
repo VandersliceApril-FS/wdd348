@@ -11,9 +11,8 @@ const styles = {
         fontWeight: '500',
         fontSize: '1rem',
         background: 'transparent',
-        color: '#8a817c',
-        
-    },
+        color: '#8a817c'
+    }
 }
 
 function BookItem({ book }) {

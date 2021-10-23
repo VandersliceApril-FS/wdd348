@@ -1,6 +1,6 @@
 import React from "react"
 import { GlobalProvider } from './context/GlobalState'
-import { BrowserRouter as Router, NavLink } from "react-router-dom"
+import { HashRouter as Router, NavLink } from "react-router-dom"
 import Routes from './components/Routes'
 import MainNav from './components/Nav/MainNav'
 import Brand from './images/brand-01.png'
