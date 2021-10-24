@@ -76,7 +76,7 @@ nav {
     max-height: 6rem;
     max-width: 4rem;
     overflow: hidden;
-    padding: 0 0 .25rem 0;
+    padding: 0 0 .25rem .5rem;
 }
 .coverImage {
     height: 100%;
@@ -101,8 +101,8 @@ form {
     margin-bottom: 1rem;
 }
 input[type="text"] {
-    background-color: #f4f3ee;
-    border-radius: 4px;
+    background-color: #F6F5F4;
+    border-radius: 0;
     border: none;
     height: 3.2rem;
     font-size: 16px; /* set to 16px to prevent zoom in on input focus on mobile  */
@@ -163,7 +163,9 @@ input[type="text"] {
     }
     input[type="text"] {
         font-size: 1rem;
-        
+        border-radius: 4px;
+        background-color: #F6F5F4;
+        border: 1px solid #8A817C;
     }
     main {
         max-width: 95%;
