@@ -10,7 +10,8 @@ The main idea behind this app came when I was homeschooling my son during the pa
 *To get started [React Bootstrap](https://react-bootstrap.github.io/) components were used for a lot of the design, but have since been mostly replaced with custom components.*
 
 ## Other Build Notes
-
+- As previously mentioned, CSS was initially done using React Bootstrap but has been replaced with custom styling.
+- App.css is labeled by component/page and properties are sorted alphabetically
 
 ## Author
 April Vanderslice

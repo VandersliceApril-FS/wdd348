@@ -3,34 +3,34 @@
 
 /* App level Styles */
 body {
-    margin: 0;
+    font-size: 62.5%;
     font-family: 'Montserrat', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 62.5%;
+    margin: 0;
 }
 nav {
     display: flex;
-    justify-content: center;
     font-size: 1.5rem;
+    justify-content: center;
 }
 .navLink {
-    margin: 1rem;
-    vertical-align: text-bottom;
-    text-decoration: none;
     color: #BCB8B1;
+    margin: 1rem;
+    text-decoration: none;
+    vertical-align: text-bottom;
 }
 .homeContainer {
       width: 80%;
       margin: 0 auto;
 }
 .buttonPrimary {
-    width: fit-content;
     background: #5F0A87;
-    padding: .5rem 1rem;
-    color: #fff;
     border: none;
     border-radius: 2px;
+    color: #fff;
+    padding: .5rem 1rem;
+    width: fit-content;
 }
 
 /* Library Page */
@@ -51,26 +51,26 @@ nav {
     max-width: 13rem;
 }
 .cardContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    border-bottom: .5px solid #bcb8b1;
-    margin-bottom: .25rem;
     background: #fff;
+    border-bottom: .5px solid #bcb8b1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .25rem;
+    width: 100%;
 }
 .card {
+    border: none;
     display: flex;
     flex-direction: row;
-    border: none;
 }
 .deleteButton {
-    height: 1.2rem;
+    background: transparent;
     border: none;
-    padding: 0 .5rem 0 0;
+    color: #8a817c;
     font-weight: 500;
     font-size: 1rem;
-    background: transparent;
-    color: #8a817c;
+    height: 1.2rem;
+    padding: 0 .5rem 0 0;
 }
 .coverContainer {
     max-height: 6rem;
@@ -89,11 +89,10 @@ nav {
 .title {
     font-weight: 700;
     font-size: .9rem;
-    margin: 0;
     font-family: 'Merriweather', serif;
+    margin: 0;
     text-transform: capitalize;
 }
-
 
 /* Search Form & Results*/
 form {
@@ -102,27 +101,27 @@ form {
     margin-bottom: 1rem;
 }
 input[type="text"] {
-    border: none;
     background-color: #f4f3ee;
-    height: 3.2rem;
-    padding: 0 1rem;
     border-radius: 4px;
-    width: 100%;
+    border: none;
+    height: 3.2rem;
     font-size: 16px; /* set to 16px to prevent zoom in on input focus on mobile  */
+    padding: 0 1rem;
+    width: 100%;
 }
 .resultsContainer {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 /* Search Result Card */
 .resultContainer {
-    width: 95%;
+    border-bottom: .5px solid #bcb8b1;
     display: flex;
     justify-content: space-between;
     margin-bottom: .5rem;
-    border-bottom: .5px solid #bcb8b1;
+    width: 95%;
 }
 .resultTitle {
     font-size: .75rem;
@@ -131,15 +130,15 @@ input[type="text"] {
 }
 .linkButton {
     background: transparent;
-    color: #5F0A87;
     border: none;
-    text-decoration: underline;
+    color: #5F0A87;
     font-size: 1rem;
+    text-decoration: underline;
 }
 .successAlert {
     background: transparent;
-    color: green;
     border: none;
+    color: green;
     font-weight: 700;
 }
 
@@ -149,16 +148,15 @@ input[type="text"] {
         margin: 3rem auto;
     }
     .cardContainer {
-        width: 19rem;
-        box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
         border: none;
+        box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
+        width: 19rem;
     }
     .coverContainer {
         padding: 0;
     }
     .homeHeader {
         font-size: 3rem;
-        
     }
     .homeAbout {
         font-size: 1rem;
