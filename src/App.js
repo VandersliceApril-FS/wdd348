@@ -2,10 +2,8 @@ import React from "react"
 import { GlobalProvider } from './context/GlobalState'
 import { HashRouter as Router, NavLink } from "react-router-dom"
 import Routes from './components/Routes'
-import MainNav from './components/Nav/MainNav'
+import MainNav from './components/MainNav'
 import Brand from './images/brand-01.png'
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 

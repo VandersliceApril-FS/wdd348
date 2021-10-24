@@ -1,19 +1,6 @@
 import React, { useContext } from 'react'
-import './BookItem.css'
-import BookPlaceholder from '../../images/book.png'
-import { GlobalContext } from '../../context/GlobalState'
-
-const styles = {
-    deleteButton: {
-        height: '1.2rem',
-        border: 'none',
-        padding: '0 .5rem 0 0',
-        fontWeight: '500',
-        fontSize: '1rem',
-        background: 'transparent',
-        color: '#8a817c'
-    }
-}
+import BookPlaceholder from '../images/book.png'
+import { GlobalContext } from '../context/GlobalState'
 
 function BookItem({ book }) {
     const {deleteBook} = useContext(GlobalContext)
@@ -39,7 +26,7 @@ function BookItem({ book }) {
                     }
                 </section>
             </div>
-            <button style={styles.deleteButton} onClick={() => deleteBook(book.id)}>x</button>
+            <button className="deleteButton" onClick={() => deleteBook(book.id)}>x</button>
         </article>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import './ResultCard.css'
-import { GlobalContext } from '../../context/GlobalState'
+
+import { GlobalContext } from '../context/GlobalState'
 
 function ResultCard({ result }) {
     const {addBook}  = useContext(GlobalContext);
@@ -26,7 +26,7 @@ function ResultCard({ result }) {
                 <section className="bookResultInfo">
                     <h2 className="resultTitle">{result.title}</h2>
                     {result.author_name &&
-                        <h4 className="author">by {result.author_name}</h4>
+                        <h4 className="author">by {result.author_name[0]}</h4>
                     }
                     {result.isbn &&
                     <p className="identifiers">ISBN: {result.isbn[0]}</p>

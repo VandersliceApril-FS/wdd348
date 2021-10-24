@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Search.css'
 
 function Search({ getQuery }) {
     const [text, setText] = useState('')

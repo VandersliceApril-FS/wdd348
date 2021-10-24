@@ -1,19 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
+/* App level Styles */
 body {
     margin: 0;
     font-family: 'Montserrat', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 62.5%;
-    
-  }
-
-  .homeContainer {
+}
+nav {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.navLink {
+    margin: 1rem;
+    vertical-align: text-bottom;
+    text-decoration: none;
+    color: #BCB8B1;
+}
+.homeContainer {
       width: 80%;
       margin: 0 auto;
-  }
-
+}
 .buttonPrimary {
     width: fit-content;
     background: #5F0A87;
@@ -23,7 +33,23 @@ body {
     border-radius: 2px;
 }
 
+/* Library Page */
+.libraryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Book Item and Result Card */
+.author {
+    font-weight: 400;
+    font-size: .7rem;
+    margin-bottom: .25rem;
+}
+.bookInfo {
+    margin: .5rem;
+    max-width: 13rem;
+}
 .cardContainer {
     display: flex;
     width: 100%;
@@ -37,12 +63,14 @@ body {
     flex-direction: row;
     border: none;
 }
-.title {
-    font-weight: 700;
-    font-size: .9rem;
-    margin: 0;
-    font-family: 'Merriweather', serif;
-    text-transform: capitalize;
+.deleteButton {
+    height: 1.2rem;
+    border: none;
+    padding: 0 .5rem 0 0;
+    font-weight: 500;
+    font-size: 1rem;
+    background: transparent;
+    color: #8a817c;
 }
 .coverContainer {
     max-height: 6rem;
@@ -53,34 +81,72 @@ body {
 .coverImage {
     height: 100%;
 }
-.author {
-    font-weight: 400;
-    font-size: .7rem;
-    margin-bottom: .25rem;
-}
 .identifiers {
     font-size: .65rem;
     font-weight: 300;
     margin: 0;
 }
-.bookInfo {
-    margin: .5rem;
-    max-width: 13rem;
+.title {
+    font-weight: 700;
+    font-size: .9rem;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    text-transform: capitalize;
 }
 
+
+/* Search Form & Results*/
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+input[type="text"] {
+    border: none;
+    background-color: #f4f3ee;
+    height: 3.2rem;
+    padding: 0 1rem;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px; /* set to 16px to prevent zoom in on input focus on mobile  */
+}
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Search Result Card */
+.resultContainer {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    border-bottom: .5px solid #bcb8b1;
+}
+.resultTitle {
+    font-size: .75rem;
+    font-weight: 500;
+    margin: 0;
+}
+.linkButton {
+    background: transparent;
+    color: #5F0A87;
+    border: none;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+.successAlert {
+    background: transparent;
+    color: green;
+    border: none;
+    font-weight: 700;
+}
+
+/* iPad sized media queries */
 @media all and (min-width: 768px) {
-    body {
-        background: #F6F5F4;
-    }
     .aboutContainer {
         margin: 3rem auto;
-    }
-    .homeHeader {
-        font-size: 3rem;
-        
-    }
-    .homeAbout {
-        font-size: 1rem;
     }
     .cardContainer {
         width: 19rem;
@@ -90,19 +156,50 @@ body {
     .coverContainer {
         padding: 0;
     }
-    .title {
+    .homeHeader {
+        font-size: 3rem;
+        
+    }
+    .homeAbout {
         font-size: 1rem;
+    }
+    input[type="text"] {
+        font-size: 1rem;
+        
     }
     main {
         max-width: 95%;
     }
-    input[type="text"] {
-        font-size: 1rem;
-        background-color: #fff;
-    }
     nav {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .successAlert {
+        font-size: 1rem;
+    }
+    .title {
+        font-size: 1rem;
     }
 }
 
+/* Less grid columns on iPad mini sized devices */
+@media all and (min-width: 601px) and (max-width: 800px) {
+    .libraryContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 0 auto;
+    }
+}
 
+/* More grid columns on desktop */
+@media screen and (min-width: 801px) {
+    .libraryContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .25rem;
+      margin: 0 auto;
+  }
+  main {
+    max-width: 90%;
+}
+}
